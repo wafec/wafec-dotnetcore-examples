@@ -1,0 +1,1 @@
+best option: create a migration project with a context where all classes will be there for the app
