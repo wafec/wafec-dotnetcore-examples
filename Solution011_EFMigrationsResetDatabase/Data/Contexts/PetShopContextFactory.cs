@@ -13,7 +13,8 @@ namespace Data.Contexts
         public PetShopContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<PetShopContext>();
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=PetShop011;Trusted_Connection=True");
+            string connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            optionsBuilder.UseSqlServer(connectionString);
             return new PetShopContext(optionsBuilder.Options);
         }
     }
